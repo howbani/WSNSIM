@@ -1,0 +1,30 @@
+/*
+            lock (txt_name)
+            {
+                Thread xx = new Thread(
+                       () =>
+                       {
+                           Action action = () => txt_name.Text += "1- Ammar-Hawbani \r\n";
+                           Dispatcher.Invoke(action);
+                       }
+                       );
+                xx.Start("x");
+            }
+
+            txt_name.Text += "mian 1- Ammar-Hawbani \r\n";
+            Thread.Sleep(1000);
+            lock (txt_name)
+            {
+                new Thread(
+                    () =>
+                    {
+                        Action action = () => txt_name.Text += "2- Ammar-Hawbani \r\n";
+                        Dispatcher.Invoke(action);
+                    }
+                    ).Start();
+            }
+
+            txt_name.Text += "mian 2- Ammar-Hawbani \r\n";
+
+        }
+        */

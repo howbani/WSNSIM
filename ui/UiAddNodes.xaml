@@ -1,0 +1,22 @@
+﻿<Window x:Class="MiniSDN.ui.UiAddNodes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="UiAddNodes" 
+        Height="120"
+        Width="300"
+        MaxHeight="120" MaxWidth="300">
+    
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <Label Width="100">Number of Nodes:</Label>
+            <TextBox Text="30" Name="txt_nodes_number" Width="162"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Width="100">r:</Label>
+            <TextBox Text="25" Name="txt_range" Width="162"></TextBox>
+        </StackPanel>
+        
+        <Button Click="Button_Click" Margin="0,0,183,0">OK</Button>
+    </StackPanel>
+    
+</Window>

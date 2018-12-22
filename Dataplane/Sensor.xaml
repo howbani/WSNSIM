@@ -1,0 +1,167 @@
+﻿<UserControl x:Class="MiniSDN.Dataplane.Sensor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             MouseEnter="UserControl_MouseEnter"
+             MouseLeave="UserControl_MouseLeave"
+             d:DesignHeight="100" d:DesignWidth="100">
+
+
+    <Grid 
+        Name="Device_Sensor"
+        MouseDown="Device_Sensor_MouseDown"
+        MouseMove="Device_Sensor_MouseMove"
+        MouseUp="Device_Sensor_MouseUp"
+        >
+        <Grid.ContextMenu>
+            <ContextMenu>
+
+              
+                
+                <Label MouseDown="btn_send_packet_MouseDown" Name="btn_send_1_packet">
+                    Source: Send 1p (1p/0.001s)
+                </Label>
+                <Label Name="btn_send_10_packet" MouseDown="btn_send_packet_MouseDown">
+                    Source: Send 10p (1p/0.001s)
+                </Label>
+                <Label Name="btn_send_100_packet" MouseDown="btn_send_packet_MouseDown">
+                    Source: Send 100p (1p/0.001s)
+                </Label>
+
+                <Label MouseDown="btn_send_1_p_each1sec_MouseDown" Name="btn_send_1_p_each1sec">
+                    Source/Destination: Send 1p/5s.
+                </Label>
+
+                <Label MouseDown="Btn_select_me_as_end_node_MouseDown" Name="Btn_select_me_as_end_node_1">
+                    Destination: 1p.
+                </Label>
+
+                <Label MouseDown="Btn_select_me_as_end_node_MouseDown" Name="Btn_select_me_as_end_node_10">
+                    Destination: 10p.
+                </Label>
+
+                <Label MouseDown="Btn_select_me_as_end_node_MouseDown" Name="Btn_select_me_as_end_node_1_5sec">
+                    Destination: 1p/5s.
+                </Label>
+
+
+                <Label MouseDown="btn_show_routing_log_MouseDown" Name="btn_show_routing_log">
+                    Show Routing Log
+                </Label>
+
+
+                <Label MouseDown="btn_draw_paths_MouseDown" Name="btn_draw_paths">
+                    Draw Paths
+                </Label>
+
+                <Label MouseDown="btn_show_my_flows_MouseDown" Name="btn_show_my_flows">
+                    Show my Flows
+                </Label>
+
+
+
+            </ContextMenu>
+        </Grid.ContextMenu>
+
+        <Ellipse 
+            Name="Ellipse_Communication_range" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center" 
+            Width="50" 
+            Height="50" 
+            StrokeDashArray="2"
+            Visibility="Hidden"
+            Stroke="Black"/>
+        
+        <Ellipse 
+            Name="Ellipse_Sensing_range" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center" 
+            Width="25" 
+            Height="25" 
+            Visibility="Hidden"
+            StrokeDashArray="0.3"
+            Stroke="Black"/>
+
+
+        <Ellipse 
+            Name="Ellipse_indicator"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Visibility="Hidden"
+            MouseEnter="Ellipse_center_MouseEnter"
+            Fill="SkyBlue"
+            Width="19" 
+            Height="19" 
+            Stroke="Black">
+        </Ellipse>
+        <Ellipse 
+            
+            Name="Ellipse_battryIndicator"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            MouseEnter="Ellipse_center_MouseEnter"
+            Fill="Gray"
+            Width="14" 
+            Height="14" 
+            StrokeDashArray="0.5"
+            Stroke="Red">
+        </Ellipse>
+
+        <Ellipse 
+            Name="Ellipse_MAC"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            MouseEnter="Ellipse_center_MouseEnter"
+            Fill="SeaGreen"
+            Width="8" 
+            Height="8" 
+             StrokeDashArray="0.5"
+            Stroke="Black">
+        </Ellipse>
+
+
+        <Label
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center"
+            MouseEnter="lbl_MouseEnter"
+            Visibility="Visible"
+            FontSize="10"
+            Margin="0,-20,0,0"
+            Name="lbl_Sensing_ID"
+            FontWeight="DemiBold"
+            Content="10"
+            />
+
+        <Label 
+           VerticalAlignment="Center" 
+            HorizontalAlignment="Center"
+            MouseEnter="lbl_MouseEnter"
+            FontSize="11"
+            Foreground="Brown"
+            Margin="0,20,0,0"
+            Name="lbl_hops_to_sink"
+            FontWeight="ExtraBlack"
+            Content="∞"
+            Visibility="Visible">
+        </Label>
+        <ProgressBar
+            VerticalAlignment="Center" 
+            BorderThickness="0.6"
+            BorderBrush="Black"
+            HorizontalAlignment="Center"
+            Margin="0,20,0,0"
+            Visibility="Collapsed"
+            Name="Prog_batteryCapacityNotation"
+            ValueChanged="Prog_batteryCapacityNotation_ValueChanged"
+            Height="7"
+            Width="20"
+            />
+
+
+    </Grid>
+    
+    
+</UserControl>

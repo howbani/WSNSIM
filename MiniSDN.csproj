@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{466BB64A-42B2-49CF-A1C5-694972109C96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MiniSDN</RootNamespace>
+    <AssemblyName>MiniSDN</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>lORA.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WPFToolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Computations\Radar.cs" />
+    <Compile Include="ControlPlane\NOS\FlowEngin\DownLinkRouting.cs" />
+    <Compile Include="ControlPlane\NOS\FlowEngin\UplinkRouting.cs" />
+    <Compile Include="ControlPlane\NOS\TC\subgrapgh\Graph.cs" />
+    <Compile Include="ControlPlane\NOS\TC\subgrapgh\vertex.cs" />
+    <Compile Include="ControlPlane\NOS\Visualizating\DisPathConter.cs" />
+    <Compile Include="Dataplane\PacketRouter\Candidates Coordination .cs" />
+    <Compile Include="Dataplane\PacketRouter\MiniFlowTable.cs" />
+    <Compile Include="Dataplane\PacketRouter\NeighborsTable.cs" />
+    <Compile Include="Intilization\DistrubtionsTests.cs" />
+    <Compile Include="Computations\Arrow.cs" />
+    <Compile Include="Computations\Coloring.cs" />
+    <Compile Include="Computations\Density.cs" />
+    <Compile Include="Intilization\HopsToSinkComputation.cs" />
+    <Compile Include="ControlPlane\NOS\Database.cs" />
+    <Compile Include="ControlPlane\NOS\Visualizating\NetworkVisualization.cs" />
+    <Compile Include="Dataplane\Packet.cs" />
+    <Compile Include="ControlPlane\NOS\TC\TopologyConstractor.cs" />
+    <Compile Include="Models\Energy\BatteryLevels.cs" />
+    <Compile Include="Computations\Geomtric.cs" />
+    <Compile Include="Computations\RandomeNumberGenerator.cs" />
+    <Compile Include="db\ExcelExporter.cs" />
+    <Compile Include="ExpermentsResults\Energy consumptions\ExpReport.xaml.cs">
+      <DependentUpon>ExpReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpermentsResults\Energy consumptions\UISetParEnerConsum.xaml.cs">
+      <DependentUpon>UISetParEnerConsum.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpermentsResults\Lifetime\DeadNodesRecord.cs" />
+    <Compile Include="ExpermentsResults\Lifetime\NetworkLifeTime.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dataplane\NeighborsDiscovery\NeighborsDiscovery.cs" />
+    <Compile Include="Computations\Operations.cs" />
+    <Compile Include="db\DatabaseManager.cs" />
+    <Compile Include="db\dbSetting.cs" />
+    <Compile Include="db\NetworkTopolgy.cs" />
+    <Compile Include="db\SqlOperations.cs" />
+    <Compile Include="Models\DelayModel\DelayModel.cs" />
+    <Compile Include="Dataplane\SensorRoutingLog.cs" />
+    <Compile Include="Dataplane\BoXMAC.cs" />
+    <Compile Include="Dataplane\PublicParamerters.cs" />
+    <Compile Include="Computations\GridCoverage.cs" />
+    <Compile Include="Computations\ZizageCoverage.cs" />
+    <Compile Include="Models\Energy\FirstOrderRadioModel.cs" />
+    <Compile Include="db\ImportedSensor.cs" />
+    <Compile Include="Computations\UnformRandomNumberGenerator.cs" />
+    <Compile Include="ui\conts\ListControl.xaml.cs">
+      <DependentUpon>ListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="db\NetwokImport.xaml.cs">
+      <DependentUpon>NetwokImport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\UiAddNodes.xaml.cs">
+      <DependentUpon>UiAddNodes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="db\UiExportTopology.xaml.cs">
+      <DependentUpon>UiExportTopology.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="db\UiImportTopology.xaml.cs">
+      <DependentUpon>UiImportTopology.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpermentsResults\Lifetime\UiComputeLifeTime.xaml.cs">
+      <DependentUpon>UiComputeLifeTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\UIExpermentResults.xaml.cs">
+      <DependentUpon>UIExpermentResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpermentsResults\Lifetime\UiNetworkLifetimeReport.xaml.cs">
+      <DependentUpon>UiNetworkLifetimeReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\UIPowers.xaml.cs">
+      <DependentUpon>UIPowers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\UiRandomNumberGeneration.xaml.cs">
+      <DependentUpon>UiRandomNumberGeneration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\UiRecievedPackertsBySink.xaml.cs">
+      <DependentUpon>UiRecievedPackertsBySink.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\UiRoutingDetailsLong.xaml.cs">
+      <DependentUpon>UiRoutingDetailsLong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\UiSelectNodesWidthDistance.xaml.cs">
+      <DependentUpon>UiSelectNodesWidthDistance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\UiShowLists.xaml.cs">
+      <DependentUpon>UiShowLists.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\UiShowRelatives.xaml.cs">
+      <DependentUpon>UiShowRelatives.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\UiShowRelativityForAnode.xaml.cs">
+      <DependentUpon>UiShowRelativityForAnode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\UIshowSensorsLocations.xaml.cs">
+      <DependentUpon>UIshowSensorsLocations.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ExpermentsResults\Energy consumptions\ExpReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExpermentsResults\Energy consumptions\UISetParEnerConsum.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dataplane\Sensor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\conts\ListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="db\NetwokImport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\UiAddNodes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="db\UiExportTopology.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="db\UiImportTopology.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExpermentsResults\Lifetime\UiComputeLifeTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ui\UIExpermentResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ExpermentsResults\Lifetime\UiNetworkLifetimeReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ui\UIPowers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\UiRandomNumberGeneration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\UiRecievedPackertsBySink.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\UiRoutingDetailsLong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\UiSelectNodesWidthDistance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\UiShowLists.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\UiShowRelatives.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\UiShowRelativityForAnode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\UIshowSensorsLocations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dataplane\Sensor.xaml.cs">
+      <DependentUpon>Sensor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dataplane\img\sensors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dataplane\img\bs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dataplane\img\bullute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PerfCenterCpl.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="lORA.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

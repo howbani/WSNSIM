@@ -1,0 +1,13 @@
+﻿1>------ Rebuild All started: Project: MiniSDN, Configuration: Debug Any CPU ------
+1>C:\Users\Howbani\Desktop\Ammar\WSN\SDN SIMULATION\Computations\Density.cs(2,7,2,24): warning CS0105: The using directive for 'MiniSDN.Dataplane' appeared previously in this namespace
+1>C:\Users\Howbani\Desktop\Ammar\WSN\SDN SIMULATION\Models\DelayModel\DelayModel.cs(3,7,3,24): warning CS0105: The using directive for 'MiniSDN.Dataplane' appeared previously in this namespace
+1>C:\Users\Howbani\Desktop\Ammar\WSN\SDN SIMULATION\ui\UiAddNodes.xaml.cs(2,7,2,24): warning CS0105: The using directive for 'MiniSDN.Dataplane' appeared previously in this namespace
+1>C:\Users\Howbani\Desktop\Ammar\WSN\SDN SIMULATION\ExpermentsResults\Lifetime\UiComputeLifeTime.xaml.cs(5,7,5,24): warning CS0105: The using directive for 'MiniSDN.Dataplane' appeared previously in this namespace
+1>C:\Users\Howbani\Desktop\Ammar\WSN\SDN SIMULATION\ui\UIPowers.xaml.cs(3,7,3,25): warning CS0105: The using directive for 'MiniSDN.Properties' appeared previously in this namespace
+1>C:\Users\Howbani\Desktop\Ammar\WSN\SDN SIMULATION\Computations\Density.cs(2,7,2,24): warning CS0105: The using directive for 'MiniSDN.Dataplane' appeared previously in this namespace
+1>C:\Users\Howbani\Desktop\Ammar\WSN\SDN SIMULATION\Models\DelayModel\DelayModel.cs(3,7,3,24): warning CS0105: The using directive for 'MiniSDN.Dataplane' appeared previously in this namespace
+1>C:\Users\Howbani\Desktop\Ammar\WSN\SDN SIMULATION\ui\UiAddNodes.xaml.cs(2,7,2,24): warning CS0105: The using directive for 'MiniSDN.Dataplane' appeared previously in this namespace
+1>C:\Users\Howbani\Desktop\Ammar\WSN\SDN SIMULATION\ExpermentsResults\Lifetime\UiComputeLifeTime.xaml.cs(5,7,5,24): warning CS0105: The using directive for 'MiniSDN.Dataplane' appeared previously in this namespace
+1>C:\Users\Howbani\Desktop\Ammar\WSN\SDN SIMULATION\ui\UIPowers.xaml.cs(3,7,3,25): warning CS0105: The using directive for 'MiniSDN.Properties' appeared previously in this namespace
+1>  MiniSDN -> C:\Users\Howbani\Desktop\Ammar\WSN\SDN SIMULATION\bin\Debug\MiniSDN.exe
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========

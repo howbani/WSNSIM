@@ -1,0 +1,76 @@
+﻿<Window x:Class="MiniSDN.ui.UIPowers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        mc:Ignorable="d"
+        Title="Control Parameters" Height="290" Width="493">
+    <StackPanel  VerticalAlignment="Top">
+
+        <GroupBox Header="Controls">
+            <StackPanel Orientation="Vertical">
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="150">L-avlue exponent (γ_L)</Label>
+                    <ComboBox Width="80" Name="com_L"></ComboBox>
+                    <Label Width="150" >H-value exponent (γ_H)</Label>
+                    <ComboBox Width="80" Name="com_H"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="150">Dir-value exponent (γ_R)</Label>
+                    <ComboBox Width="80" Name="com_Dir"></ComboBox>
+                    <Label Width="150">R-value exponent (γ_R)</Label>
+                    <ComboBox Width="80" Name="com_R"></ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Width=" 150">D-value exponent (γ_D)</Label>
+                    <ComboBox Width="80" Name="com_D"></ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+        
+        
+        <GroupBox Header="Power">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="159">Battery Intial Energy (Jouls)</Label>
+                    <ComboBox Width="80" Name="com_intail_energy"></ComboBox>
+
+                    <Label Width="140">UpdateLossPercentage</Label>
+                    <ComboBox Width="80" Name="com_UpdateLossPercentage"></ComboBox>
+                    
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+
+        <GroupBox Header="Intervals">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="150" Content="Start up (s)"/>
+                    <ComboBox Width="80" Name="comb_startup"></ComboBox>
+
+                    <Label Width="150" Content="Active Period (s)"/>
+                    <ComboBox Width="80" Name="comb_active"></ComboBox>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="150" Content="Sleep Period(s)"/>
+                    <ComboBox Width="80" Name="comb_sleep" ></ComboBox>
+
+                    <Label Width="150" Content="Queue Time(s)"/>
+                    <ComboBox Width="80" Name="com_queueTime" ></ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+
+
+
+        <Button Click="btn_set_Click" Name="btn_set" Height="29" Margin="311,0,0,0">Set</Button>
+        
+    </StackPanel>
+</Window>

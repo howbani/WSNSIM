@@ -1,0 +1,81 @@
+﻿<Window x:Class="MiniSDN.ExpermentsResults.Lifetime.UiComputeLifeTime"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       
+        mc:Ignorable="d"
+        Title="Random Sources " Height="426.76" Width="520">
+    <StackPanel Margin=" 5" Orientation="Vertical">
+        <Label Background="Goldenrod" Content="Set Parameters"/>
+        <StackPanel Margin="2" Orientation="Horizontal">
+           
+            <Label Width="80" Content="Active Period"/>
+            <ComboBox Width="100" Name="comb_active" SelectionChanged="comb_active_SelectionChanged"></ComboBox>
+            <Label>s</Label>
+            <Label Width="149" Content="Sleep Period"/>
+            <ComboBox Width="100" Name="comb_sleep" SelectionChanged="comb_sleep_SelectionChanged"></ComboBox>
+            <Label>s</Label>
+        </StackPanel>
+
+        <StackPanel Margin="2" Orientation="Horizontal">
+            
+        </StackPanel>
+
+        <StackPanel Margin="2" Orientation="Horizontal">
+            <Label Width="79" Content="Start up"/>
+            <ComboBox Width="100" Name="comb_startup" SelectionChanged="comb_startup_SelectionChanged"></ComboBox>
+            <Label>s</Label>
+
+            <Label Width="150" Content="Update Energy Distrubution"/>
+            <ComboBox Width="100" Name="comb_update"></ComboBox>
+            <Label>%</Label>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Name="stack_controls">
+
+            <Label Width="40">(γ_Φ)</Label>
+            <ComboBox Height="22" Name="com_energy" Width="33"></ComboBox>
+            <Label Width="40">(γ_d)</Label>
+            <ComboBox Height="22" Name="com_transmision_distance" Width="33"></ComboBox>
+            <Label Width="40">(γ_θ)</Label>
+            <ComboBox Height="22" Name="com_direction" Width="37"></ComboBox>
+            <Label Width="40">(γ_ψ)</Label>
+            <ComboBox Height="22" Name="com_prependicular" Width="37"></ComboBox>
+            <CheckBox IsChecked="False" Name="chk_drawrouts" VerticalContentAlignment="Center" >Draw Packets Routs</CheckBox>
+            <CheckBox Name="chk_save_logs" IsChecked="False" VerticalContentAlignment="Center" >Save Logs</CheckBox>
+        </StackPanel>
+        <Label Background="Aqua">Select One of The Followings:</Label>
+        <Label  Content="In each Round: Select NOS nodes to generate NOP packets until NOD of nodes dead"  Margin="0,0,0,0"/>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Width="164" Content="NOS:  number of sources"/>
+            <ComboBox Width="120" Name="com_nos"></ComboBox>
+           
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal">
+            <Label Width="164" Content="NOP: number of packets"/>
+            <ComboBox Width="120" Name="com_nop"></ComboBox>
+           
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal">
+            <Label Width="164" Content="NOD: number of dead nodes"/>
+            <ComboBox Width="120" Name="com_NOD"></ComboBox>
+        </StackPanel>
+        <Label></Label>
+        <Button Click="btn_compute_life_time_Click" x:Name="btn_compute_life_time" Height="34" Content="Compute Lifetime"/>
+
+
+
+        <Label Content="In each Round: each node in the network, send 1 packet untill NOD of nodes dead"/>
+        <StackPanel Orientation="Horizontal">
+            <Label Width="164" Content="NOD: number of dead nodes"/>
+            <ComboBox Width="120" Name="com_num_of_deadNodes"></ComboBox>
+        </StackPanel>
+
+        <Button Click="btn_from_all_Click" x:Name="btn_from_all" Height="34" Content="Compute Lifetime"/>
+    </StackPanel>
+    
+</Window>

@@ -1,0 +1,91 @@
+﻿<Window x:Class="MiniSDN.ExpermentsResults.Energy_consumptions.UISetParEnerConsum"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniSDN.ExpermentsResults.Energy_consumptions"
+        mc:Ignorable="d"
+        WindowStyle="SingleBorderWindow"
+        
+        Title="UISetParEnerConsum" Height="400" Width="520">
+    
+    <StackPanel Margin="10" Orientation="Vertical">
+        <StackPanel Margin="2" Orientation="Horizontal">
+            <Label Width="150">Simulation Time</Label>
+            <ComboBox Text="480" Width="100" Name="comb_simuTime"></ComboBox>
+            <Label>s</Label>
+            <CheckBox Unchecked="chk_stope_when_first_node_deis_Unchecked" Checked="chk_stope_when_first_node_deis_Checked" Name="chk_stope_when_first_node_deis" IsChecked="True" VerticalContentAlignment="Center" >Stop when the first node dies</CheckBox>
+        </StackPanel>
+
+        <StackPanel Margin="2" Orientation="Horizontal">
+            <Label Width="150" Content="Packet Rate: 1/"/>
+            <ComboBox Width="100" Name="comb_packet_rate"></ComboBox>
+            <Label>s</Label>
+            <CheckBox Unchecked="chk_drawrouts_Unchecked" Checked="chk_drawrouts_Checked" IsChecked="False" x:Name="chk_drawrouts" VerticalContentAlignment="Center" Content="Show Routs" />
+        </StackPanel>
+
+        <StackPanel Margin="2" Orientation="Horizontal">
+            <Label Width="150" Content="Start up"/>
+            <ComboBox Width="100" Name="comb_startup" SelectionChanged="comb_startup_SelectionChanged"></ComboBox>
+            <Label>s</Label>
+            <CheckBox Unchecked="chk_save_logs_Unchecked" Checked="chk_save_logs_Checked" Name="chk_save_logs" IsChecked="False" VerticalContentAlignment="Center" >Save Logs</CheckBox>
+        </StackPanel>
+
+        <StackPanel Margin="2" Orientation="Horizontal">
+            <Label Width="150" Content="Active Period"/>
+            <ComboBox Width="100" Name="comb_active" SelectionChanged="comb_active_SelectionChanged"></ComboBox>
+            <Label>s</Label>
+            <CheckBox Unchecked="chek_show_radar_Unchecked" Checked="chek_show_radar_Checked" x:Name="chek_show_radar" IsChecked="False" VerticalContentAlignment="Center" Content="Show Radar" />
+        </StackPanel>
+
+        <StackPanel Margin="2" Orientation="Horizontal">
+            <Label Width="150" Content="Sleep Period"/>
+           
+            <ComboBox Width="100" Name="comb_sleep" SelectionChanged="comb_sleep_SelectionChanged"></ComboBox>
+            <Label>s</Label>
+            <CheckBox Unchecked="chek_animation_Unchecked" Checked="chek_animation_Checked" Name="chek_animation" IsChecked="False" VerticalContentAlignment="Center" >Show Animation</CheckBox>
+           
+        </StackPanel>
+        <StackPanel Margin="2" Orientation="Horizontal">
+            <Label Width="150" Content="Queue Time(s)"/>
+            <ComboBox IsEnabled="False" Width="100" Name="com_queueTime" ></ComboBox>
+            <Label>s</Label>
+        </StackPanel>
+            
+
+        <StackPanel Margin="2" Orientation="Horizontal">
+            <Label Width="150" Content="UpdateLossPercentage"/>
+            <ComboBox Width="100" Name="com_UpdateLossPercentage"></ComboBox>
+            <Label>%</Label>
+        </StackPanel>
+
+
+        <GroupBox FontWeight="Medium" Header="Controls" Margin="0,0,10,0">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="150">L-avlue exponent (γ_L)</Label>
+                    <ComboBox Width="80" Name="com_L"></ComboBox>
+                    <Label Width="150" >H-value exponent (γ_H)</Label>
+                    <ComboBox Width="80" Name="com_H"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="150">Dir-value exponent (γ_R)</Label>
+                    <ComboBox Width="80" Name="com_Dir"></ComboBox>
+                    <Label Width="150">R-value exponent (γ_R)</Label>
+                    <ComboBox Width="80" Name="com_R"></ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Width=" 150">D-value exponent (γ_D)</Label>
+                    <ComboBox Width="80" Name="com_D"></ComboBox>
+                </StackPanel>
+
+
+            </StackPanel>
+        </GroupBox>
+        
+        <Button x:Name="btn_ok" Margin="255,0,91,0" Content="Start" Click="btn_ok_Click" Height="27"/>
+
+    </StackPanel>
+
+</Window>
